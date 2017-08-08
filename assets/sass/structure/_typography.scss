@@ -1,0 +1,225 @@
+// Typography
+
+/* Typography resets */
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; 
+}
+
+body {
+	font-family: $paragraph-font-family;
+	font-style: $paragraph-font-style;
+	font-weight: $paragraph-font-weight;
+	font-size: $paragraph-font-size;  
+	color: $paragraph-font-color;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+
+// Links
+a {
+ 	outline: none!important;	
+	
+	transition: background 200ms linear, color 200ms linear;
+	
+	&:focus {
+		outline: none!important;	
+	}
+
+	&:visited {
+		//color: inherit;
+	} // &:visited
+
+} // a
+
+
+
+a[href^="tel"]:link,
+a[href^="tel"]:visited, 
+a[href^="tel"]:hover {
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+// mobile body class
+@include breakpoint(xlarge down) {
+    a[href^="tel"]:link,
+    a[href^="tel"]:visited,
+    a[href^="tel"]:hover {
+        text-decoration: none;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+}
+
+
+strong {
+	font-weight: 700;	
+}
+		
+/* Headings
+--------------------------------------------- */	
+		
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $header-color;
+	font-family: $header-font-family;
+   	
+	a {
+		color: $anchor-color;	
+	}	
+}
+
+.section h1,
+.section h2,
+.section h3 {
+    text-align: center;
+}
+
+
+// Heading Line Heights
+
+ h1, 
+.h1 {
+	font-weight: 400;
+ 	line-height: 1.1;
+  }
+
+h2,
+.h2  {
+    color: $navy;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+h3,
+.h3 {
+	color: $navy;
+    font-size: 22px;
+    margin-bottom: 10px;
+    line-height: 25px;
+}
+
+.section {
+    
+    h3,
+    .h3 {
+        color: $red;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+}
+ 
+ @mixin fancy-list {
+    @include list-reset;
+    margin-bottom: $global-margin;
+ 
+    li {
+        position: relative;
+        
+        min-height: 30px;
+        padding: 0 0 18px 40px!important;
+        font-size: 20px;
+        line-height: inherit;
+        margin-bottom: 5px;
+        
+        &:before {
+            content: '';
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            top: 2px;
+            left: 0;
+            background: #335d94;
+            border-radius: 50%;
+        }
+        
+        &:after {
+            content: '';
+            display: inline-block;
+            border: solid #fff;
+            border: solid #fff;
+            border-width: 0 1px 1px 0;
+            transform: rotate(-45deg);
+            width: 8px;
+            height: 8px;  
+            position: absolute;
+            top: 12px;
+            left: 8px; 
+        }
+
+        a {
+            text-decoration: none;   
+        }
+    }
+
+}
+ 
+// entry content styles
+
+ .entry-content {
+ 
+	a {
+		color: $anchor-color;
+		text-decoration: none;
+		text-decoration: underline;
+			
+		&:hover {
+			color: $anchor-color-hover;
+			text-decoration: none;
+		}
+	}
+	
+	p, li {
+		line-height: $paragraph-line-height;
+		
+	}
+	
+	p, ul {
+		margin-bottom: $paragraph-margin-bottom;	
+	}
+    
+    p:last-child {
+        margin-bottom: 0;   
+    }
+	
+	ul:not([class]),
+	ol:not([class]) {
+		
+		margin: 0 0 30px;
+		list-style-position: outside;
+		
+		li:not([class]) {
+			padding: 0 0 5px 0;
+			margin-bottom: 0;
+		}
+	}
+	
+		
+	ol li {
+		list-style-type: decimal;
+	}
+ 	
+}
+
+.page .entry-content {
+ 
+    ul:not([class]),
+	ol:not([class]) {
+		
+        @include fancy-list;
+       
+	}
+    
+}

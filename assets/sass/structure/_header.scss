@@ -1,0 +1,253 @@
+/*
+Header
+---------------------------------------------- */
+
+
+.site-header {
+    
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 0px 1px 1px #ececec;
+    
+    @media #{$xlarge-up} {
+        position: relative;
+        background: transparent;
+        top: inherit;
+        box-shadow: none;
+    }
+    
+ 	.wrap {
+		
+		.row {
+			position: relative;	
+			text-align: center;
+			
+			&.first {
+				background: #ECECEC;	
+			}
+			
+			@include breakpoint(large down) {
+				&:not(.first) {
+					padding-top: 15px;
+					padding-bottom: 10px;
+				}
+			}
+			
+			@media #{$xlarge-up} {
+				background: transparent!important;
+      			text-align: left;
+				
+			}
+		}
+		
+		.header-widget {
+			
+			@media #{$xlarge-up} {
+      			padding-top: 22px;
+			}
+			
+			font-size: 17px;
+			line-height: 24px;
+			
+			a {
+                color: #979797;
+				
+				@media #{$xlarge-up} {
+      				color: #D7D5D5;
+				}
+				
+				
+			}
+		}
+		.header-contact {
+ 			
+			padding-top: 22px;
+			text-align: right;
+			
+			> * {
+				display: inline-block;
+				vertical-align: middle;	
+			}
+			
+			.phone-number {
+				color: #fff;	
+			}
+ 			
+		}
+		
+		.phone-number {
+			margin-right: 15px;
+			font-size: 20px;
+			font-weight: 700;
+			
+			@media #{$xlarge-up} {
+				svg {
+					display: none;	
+				}
+			}
+			
+			@include breakpoint(large down) {
+				display: block;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 15px;
+				width: 40px;
+				height: 40px;
+				
+				span {
+					display: none;	
+				}
+			}
+			
+		}
+		
+	}
+	
+	.site-branding {
+ 		display: inline-block;
+	}
+	
+}
+
+.site-header {
+
+	&.fixed {
+		display: none;
+		
+		@media #{$xlarge-up} {
+      		display: block;
+		}
+		
+		transition: transform .25s ease-in-out;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 10;
+		transform: translateY(-150%);
+		background-color: white;
+		box-shadow: 0px 1px 4px #888888;
+		
+		.wrap {
+			.header-widget {
+				padding-top: 4px;
+				
+				a {
+					color: #979797;	
+				}
+			}
+			
+			.header-contact {
+				padding-top: 0;	
+			}	
+			
+			.site-branding {
+				margin-top: -5px;
+				padding: 0 0 15px 0;
+			}
+		}
+		
+		.nav-primary {
+			
+			bottom: 0;
+			
+			.menu > .menu-item {
+				
+				.sub-menu-toggle:after {
+					border-color: #424242;
+				}
+				a {
+					color: #4A4A4A;	
+					padding-bottom: 12px;
+				}
+                
+                
+                &:hover,
+                &:focus,
+                &:active {
+                    
+                    > a {
+                        background: transparent;	
+                        color: $red;
+                    }
+                    
+                    .sub-menu-toggle {
+                       
+                        &:after {
+                            border-color: $red;
+                        }
+                    }
+                    
+                    > .sub-menu {
+                        left: 0;
+                        opacity: 1;
+                        transition: opacity 200ms linear;
+    
+                    }
+                }
+    
+                &.current-menu-item,
+                &.current_page_parent,
+                &.current-page-ancestor,
+                &.current-menu-ancestor,
+                &.current-category-ancestor {
+    
+                    > a {
+                        background: transparent;
+                        color: $red;
+                    }
+                    
+                    .sub-menu-toggle {
+                           
+                        &:after {
+                            border-color: $red!important;
+                        }
+                    }
+                }
+                
+                
+			}
+            
+            
+            
+			
+			
+			
+			.sub-menu {
+				background-color: rgba(255, 255, 255, 0.95);
+                border: solid $red 2px;
+			}
+			
+		}
+	}
+
+	&.fixed.show {
+		transform: translateY(0);
+		a {
+			color: #424242;
+		}
+		.header-contact-row {
+			padding-top: 0px;
+			.header-widget {
+				color: #424242;
+			}
+			.header-contact {
+				.phone-number {
+				}
+			}
+		}
+		.btn-primary {
+			color: white;
+			&:hover {
+				border: solid 2px $red;
+				color: $red;
+			}
+		}
+	}
+}
+

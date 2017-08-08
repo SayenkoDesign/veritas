@@ -1,0 +1,194 @@
+/* CSS Document */
+
+.page-builder {
+
+	.site-main section {
+ 		
+        .wrap {
+            position: relative;
+            z-index: 3;
+            
+        }
+		
+		.entry-content {
+			overflow: hidden;	
+            
+            @include breakpoint(medium down) {
+                text-align: center;
+                
+                ul {
+                    display: inline-block;   
+                    
+                    li {
+                        text-align: left;   
+                    }
+                }
+            }
+		}
+		
+		&:nth-child(odd) {
+         
+            padding: 30px 0;
+            
+            @media #{$large-up} {
+                padding: 75px 0;
+                
+                h2 {
+                    text-align: left;   
+                }
+            }
+            
+             .wp-post-image, .raw {
+			
+                margin: 0 auto $global-margin;
+                
+                @media #{$large-up} {
+                    float: left;
+                    margin: 0 30px 0 0;
+                }	
+            }
+            
+            .raw {
+                
+                @media #{$large-up} {
+                    width: 60%;
+                }  
+                
+                @media #{$xxlarge-up} {
+                    width: 640px;
+                } 
+            }
+            
+        }
+		
+		
+		&:nth-child(even) {
+			
+            background-color: #ececec;
+            position: relative;
+            
+            padding-top: 30px;
+            padding-bottom: 40px;
+            
+            @media #{$large-up} {
+                padding-top: 30px;
+                padding-bottom: 80px;
+            }
+        
+            &:before {
+                content: '';
+                background: #fff;
+                width: 100%;
+                height: 160px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+           
+           
+            @include breakpoint(large) {
+
+                .wrap {
+                    position: relative;
+                }
+        
+                img {
+                    float: right;
+                }
+                  
+            }
+            
+            .raw {
+                
+                padding: 15px;
+                
+                @media #{$large-up} {
+                    background: #fff;
+                    min-height: 500px;
+                    padding: 40px;
+                    padding-left: 45%;
+                }   
+            }
+            
+            .white-box {
+                background: #fff;
+                width: 100%;
+                padding: 40px 20px;
+                
+                @include breakpoint(large) {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    border-top: solid 2px #f0f3f2;
+                    border-right: solid 2px #f0f3f2;
+                    border-bottom: solid 2px #f0f3f2;
+                    width: 40%;
+                    padding: 40px;
+                }
+        
+                @include breakpoint(xxlarge) {
+                    //width: 730px;
+                }
+                
+                .entry-content {
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+                        margin-bottom: 15px;
+                        color: #454C54;
+                    }
+            
+                    ul {
+                        @include fancy-list;
+                        padding-top: 15px!important;
+                        max-width: 530px;
+            
+                        li {
+                            
+                           
+                            p {
+                                margin: 0 auto;   
+                            }
+                            
+                            a {
+                                text-decoration: none;   
+                            }
+                        }
+            
+                    }  
+                    
+                    
+                    @include breakpoint(medium down) {
+                        text-align: center;
+                        
+                        ul {
+                            display: inline-block;   
+                            
+                            li {
+                                text-align: left;   
+                            }
+                        }
+                    }
+                     
+                }
+            }
+            
+            
+            
+            
+            
+		}
+ 		
+ 		
+	}
+	
+}
+
+
+.map-placeholder {
+    background: $navy;
+    color: #fff;
+    width: 100%;
+    height: 400px;   
+}

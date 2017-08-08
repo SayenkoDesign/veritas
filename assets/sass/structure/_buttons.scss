@@ -1,0 +1,52 @@
+%btn {
+  display: inline-block;
+  min-width: 177px;
+  padding: 12px 8px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  line-height: 1.5;
+  transition: ease all 0.3s;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none!important;
+}
+
+%btn-primary {
+  @extend %btn;
+  background-color: $red;
+  border: solid 2px $red;
+  color: #fff!important;
+  &:hover{
+    background-color: white;
+    color: $red!important;
+    border: solid white 2px;
+  }
+}
+
+.site-main section .btn-primary:hover {
+    border: solid $red 2px;
+}
+
+
+%btn-clear {
+  @extend %btn;
+  background-color: transparent;
+  border: solid white 2px;
+  color: white!important;
+  
+  &:hover{
+    background-color: white;
+    color: $red!important;
+  }
+}
+
+
+.btn-primary {
+   @extend %btn-primary;
+}
+
+.btn-clear {
+  @extend %btn-clear;
+}
+

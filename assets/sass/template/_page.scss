@@ -1,0 +1,148 @@
+html, body {
+	height: 100%;
+	 background-color: white;
+}
+
+.site-container {
+    
+    @include breakpoint( large down ) {
+        margin-top: 115px;
+    }
+    
+}
+
+.no-results {
+    text-align: center;   
+}
+
+
+.slick-slider {
+    visibility: hidden;
+    
+    &.slick-initialized {
+        visibility: visible;  
+    }
+}
+
+
+/*
+%btn {
+	color: #fff;
+	display: inline-block;
+ 	font-family: $header-font-family;
+ 	text-decoration: none;
+	text-transform: uppercase;
+	background: $anchor-color;
+  	font-size: 20px;
+	letter-spacing: 2px;
+	line-height: 24px;
+ 	border: none;
+	outline: none;
+	padding: 11px 30px;
+	border-radius: 100px;
+	text-align: center;
+ 	position: relative;
+	min-width: 250px;
+
+	&:hover {
+		background: $anchor-color-hover;
+		color: $white;
+		text-decoration: none;
+	}
+
+	&.blue {
+		background-color: $blue;
+
+		&:hover {
+			background: $anchor-color;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+	&.transparent {
+		background-color: transparent;
+		border: 2px solid $white;
+		&:hover {
+			background: $white;
+			color: $orange;
+			text-decoration: none;
+		}
+	}
+
+	&.white {
+		background-color: $white;
+		color: $blue;
+		border: 2px solid $blue;
+		&:hover {
+			background: $blue;
+			color: $white;
+		}
+	}
+
+	&.small {
+		font-size: 16px;
+		line-height: 20px;
+		padding: 6px 15px;
+		min-width: inherit;
+	}
+
+}
+
+a.btn {
+	@extend %btn;
+}
+
+input[type="submit"] {
+	color: #fff;
+	display: inline-block;
+ 	font-family: $header-font-family;
+ 	text-decoration: none;
+	text-transform: uppercase;
+	background: $anchor-color;
+  	font-size: 20px;
+	letter-spacing: 2px;
+	line-height: 24px;
+ 	border: none;
+	outline: none;
+	padding: 11px 30px;
+	border-radius: 100px;
+	text-align: center;
+ 	position: relative;
+
+	&:hover {
+		background: $anchor-color-hover;
+	}
+}
+
+*/
+
+
+.page-template-default,
+.error404 {
+
+	.site-main .section {
+
+		.entry-content {
+            
+            
+            > *:last-child {
+			    margin-bottom: 0;
+            }
+		}
+	}
+
+}
+
+ .error404 {
+
+	.site-main .section {
+
+		.entry-content {
+            
+            text-align: center;
+           
+		}
+	}
+
+}

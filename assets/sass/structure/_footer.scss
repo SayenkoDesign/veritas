@@ -1,0 +1,153 @@
+//
+// Footer
+// --------------------------------------------------
+
+
+.footer-cta {
+ 	background-color: $red;
+ 	color: white;
+    padding: 90px 0 75px;
+    	
+	.entry-content {
+		
+        > * {
+            display: inline-block;   
+            vertical-align: middle;
+        }
+        
+	    text-align: center;
+        
+        h2 {
+            color: #fff;  
+            font-size: 30px; 
+            line-height: 45px;
+            margin-bottom: 15px;
+        }
+        
+        a[href^="tel"] {
+            color: #fff;
+            margin: 0;
+        }
+        
+        a {
+            margin-bottom: 15px;
+            white-space: nowrap;
+            
+            @media #{$large-up} {
+                margin-left: 30px;
+            }  
+        }
+		
+		
+	}
+}
+
+
+.wpml-ls-statics-footer {
+    background: $navy;
+    border: none;
+    padding: 0 0 10px 0;
+    margin-bottom: 0!important; 
+    
+    a {
+        color: #fff!important;
+        background-color: transparent!important;   
+        
+        &:hover {
+           color:  #fff;   
+        }
+    }
+    
+    .wpml-ls-current-language > a {
+        color: $red!important;
+     }
+}
+
+.site-footer {
+	background-color: $navy;
+	
+	padding: 30px 0;
+	
+	@media #{$large-up} {
+      	padding: 70px 0 40px;
+	}
+	
+ 	.footer-widgets {
+		
+		.widget {
+			padding: 15px 0;	
+		}
+	}
+	
+	.social-icons {
+		
+		@include list-reset;
+		margin-left: -15px;
+		
+		text-align: center;
+		
+		@media #{$large-up} {
+      		text-align: left;
+		}
+ 		
+		li {
+			display: inline-block;	
+			margin-left: 15px;
+		}
+		
+		a {
+			display: block;
+			width: 52px;
+			height: 52px;
+			border-radius: 100%;
+			border: 2px solid #EFF3F1;
+			position: relative;
+ 			
+			svg {
+				fill: #EFF3F1;	
+				height: 32px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+  			}
+			
+			&:hover {
+				opacity: .8;	
+			}
+		}
+			
+	}
+	
+	.footer-logo {
+		text-align: center;
+		svg {
+			width: 78px;
+ 		}
+	}
+	
+	.contact-details {
+		
+ 		p {
+			color: #EFF3F1;
+			text-align: center;
+			font-size: 11px;
+			margin-bottom: 10px;
+			
+			strong {
+				font-size: 17px;	
+				font-weight: 400;
+			}
+			
+			a {
+				color: $red;
+				text-decoration: underline;
+			}
+			
+			@media #{$large-up} {
+      			text-align: right;
+			}
+		}
+ 		
+	}
+}

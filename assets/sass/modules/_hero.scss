@@ -1,0 +1,100 @@
+// Hero
+
+.hero {
+ 	background-size: cover;
+	background-position: left top;
+	background-repeat: no-repeat;
+    position: relative;
+    
+    &:after {
+        content: '';
+        background-color: rgba(51,51,51,.5);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;   
+    }
+
+ 	@media #{$xlarge-up} {
+    	margin-top: -139px;
+ 	}
+    
+    .flex {
+        min-height: 250px; 
+        position: relative;
+        z-index: 2;
+        
+        @media #{$large-up} {
+            min-height: 450px; 
+        }
+        
+        
+        .photo-source {
+            display: inline-block;
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            color: #D7D5D5;
+            font-size: 10px;
+            line-height: 15px;
+         }
+        
+        .wrap {            
+            padding: 75px 0;
+	
+            @media #{$large-up} {
+                padding: 75px 0;  
+            } 
+            
+            @media #{$xlarge-up} {
+                padding: 125px 0 75px; 
+            } 
+        }
+    }
+    
+    .wrap {
+        text-align: center;   
+    }
+    
+    h1 {
+        margin-bottom: 5px;   
+    }
+ 
+	h1,
+	p {
+		color: white;
+    }
+
+	p {
+ 		
+        font-size: 29px;
+        line-height: 32px;
+		font-weight: 300;
+  		text-transform: none;
+	}
+
+    
+    ul {
+		@include list-reset;
+		text-align: center;
+ 
+        li {
+            display: inline-block;            
+        }
+
+	}
+    
+}
+
+
+.section .flex {
+    display: table;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    > * {
+        display: table-cell;
+        vertical-align: middle;
+     }
+}

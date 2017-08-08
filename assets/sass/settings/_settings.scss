@@ -1,0 +1,120 @@
+//  Settings (includes overrides for sass/foundation/settings.scss)
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Breakpoints
+//   3. The Grid
+//   4. Base Typography
+//   5. Off Canvas Menu
+
+
+// 1. Global
+// ---------
+
+$global-font-size: 100%;
+$global-width: 1190px;
+$global-lineheight: 1.4;
+
+/*
+found colors
+4a4a4a - main sub menu links
+454C54 - mobile menu grey background
+*/
+$light-gray: #e6e6e6;
+$gray: #666666;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #333333;
+$white: #ffffff;
+
+$navy: #252B33;
+$red: #CA3F39; // EC2C34
+$light-red: #ec2c34;
+
+
+$body-background: #6c6c6c;
+$body-font-color: #454C54;
+$body-font-family: 'Roboto', sans-serif;
+
+$global-margin: 30px;
+$global-padding: 10px;
+$global-weight-normal: normal;
+$global-weight-bold: 700;
+$global-radius: 0;
+$global-text-direction: ltr;
+
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 980px,
+  xlarge: 1024px,
+  xxlarge: 1200px,
+  xxxlarge: 1440px
+);
+// must match $breakpoints
+$breakpoint-classes: (small medium large xlarge xxlarge xxxlarge);
+
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12; // usually 12
+$grid-column-gutter: (
+  small: 24px,
+  medium: 24px
+);
+$grid-column-align-edge: true;
+$block-grid-max: 8;
+
+
+// 4. Base Typography
+// ---------
+
+$header-font-family: 'Roboto', sans-serif;
+$header-font-weight: 400;
+$header-font-style: normal;
+
+/// Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.
+/// @type Map
+$header-styles: (
+  small: (
+    'h1': ('font-size': 36),
+    'h2': ('font-size': 30),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 36),
+    'h2': ('font-size': 30),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 16),
+  ),
+) !default;
+
+$header-color: $navy;
+$header-lineheight: 1.33;
+$header-margin-bottom: 30px;
+$small-font-size: 80%;
+$header-small-font-color: $navy;
+
+$paragraph-font-family: $body-font-family;
+$paragraph-font-style: normal;
+$paragraph-font-weight: 400;
+$paragraph-font-size: 14px;
+$paragraph-line-height: 1.43;
+$paragraph-font-color: #454C54;
+$paragraph-margin-bottom: 30px;
+
+$anchor-color: #333;
+$anchor-color-hover: scale-color(#333, $lightness: 20%);

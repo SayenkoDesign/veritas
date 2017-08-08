@@ -1,0 +1,195 @@
+// Testimonials
+
+.testimonials {
+	background-color: black;
+	background-image: url(assets/images/testimonials-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+    @media #{$large-up} {
+        .flex {
+            min-height: 600px;
+        }
+    }
+    
+	.wrap {
+ 		padding: 60px 0;
+		
+		
+	}
+
+
+	h3 {
+		color: #979797!important;
+ 		
+	}
+
+	h2 {
+		color: white;
+        margin-bottom: 45px;
+ 	}
+	
+	.slick-slider {
+ 		margin: 0 auto!important;	
+		@media #{$large-up} {
+      		padding: 0 75px;
+		}
+        
+        @media #{$xlarge-up} {
+            //max-width: 1024px;
+        }
+	}
+
+	.testimonial {
+		color: white;
+		text-align: center;
+		position: relative;
+		padding: 0 25px;
+		
+		@media #{$large-up} {
+      		padding: 0 48px;
+		}
+		
+		&:before {
+			content: '';
+			display: block;
+			width: 21px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url(assets/images/quote.png);
+			background-size: 21px;
+			background-repeat: no-repeat;
+			
+			@media #{$large-up} {
+      			width: 42px;
+				background-size: 42px;
+			}
+		}
+	}
+
+	.quote-content p {
+		font-size: 20px;
+ 	}
+	
+	.quote-name {
+		margin-top: 25px;
+ 	}
+	
+	@media #{$large-up} {
+      	
+		.quote-content p {
+			font-size: 30px;
+			line-height: 35px;
+		}
+		
+		.quote-name {
+ 			font-size: 24px;
+		}
+		
+	}
+
+	.slick-arrow {
+		display: none!important;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+ 		transition: ease opacity 0.3s;
+		cursor: pointer;
+		width: 65px;
+		height: 65px;
+ 		background-size: contain;
+		background-repeat: no-repeat;
+		
+		opacity: .8;
+		
+		&:hover svg {
+			opacity: 1;	
+		}
+        
+        svg .circle,
+        svg .arrow {
+            fill: #fff!important;    
+        }
+        
+        svg .line {
+            stroke: #fff!important;    
+        }
+		
+		
+		@media #{$large-up} {
+      		display: block!important;
+		}
+		
+		span {
+			@extend .screen-reader-text;
+		}
+		
+ 		&.arrow-left {
+			left: 0;
+			transform: translateY(-50%) rotate(-180deg);
+			
+			@media #{$xxxlarge-up} {
+      			left: -75px;
+			}
+ 		}
+		
+		&.arrow-right {
+			right: 0;
+			
+			@media #{$xxxlarge-up} {
+      			right: -75px;
+			}
+ 		}
+ 		
+		&:hover {
+			opacity: 1;	
+		}
+	}
+
+	.slick-dots {
+		position: relative;
+		bottom: 0;
+		margin: 30px 0 0;
+	}
+
+	.slick-dots li button:before {
+		font-size: 20px;
+		color: white;
+		opacity: 1;
+
+	}
+
+	.slick-dots li.slick-active button:before {
+		color: white;
+		opacity: .6;
+
+	}
+
+}
+
+
+html[lang=ru-RU] {
+    .testimonial {
+		
+		&:before {
+			content: '';
+			display: block;
+			width: 21px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url(assets/images/quote-russian.png);
+			background-size: 21px;
+			background-repeat: no-repeat;
+			
+			@media #{$large-up} {
+      			width: 42px;
+				background-size: 42px;
+			}
+		}
+	}
+}

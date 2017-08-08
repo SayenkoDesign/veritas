@@ -1,0 +1,456 @@
+/* CSS Document */
+
+.case-studies {
+	background-color: white;
+	
+	.wrap {
+		padding: 60px 0 30px 0;	
+		
+		@media #{$large-up} {
+      		padding: 75px 0;	
+		}
+	}
+	
+	.slick-slider {
+		padding-bottom: 50px;	
+	}
+	
+	.entry-header {
+		padding-bottom: 10px;	
+	}
+
+	h2 {
+		margin-bottom: 20px;
+	}
+
+	.case-study .single {
+		transform: translateY(50%);
+	}
+  	
+	.slick-arrow {
+		position: absolute;
+		bottom: 0;
+		opacity: .6;	
+		transition: ease opacity 0.3s;
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+ 		background-size: contain;
+		background-repeat: no-repeat;
+		
+		span {
+			@extend .screen-reader-text;
+		}
+		
+		&.arrow-left {
+			left: 0;
+			background-image: url('assets/images/arrow-left.svg');
+		}
+		
+		&.arrow-right {
+			right: 0;
+			background-image: url('assets/images/arrow-right.svg');	
+		}
+		
+		&:hover {
+			opacity: 1;	
+		}
+	}
+	
+ }
+ 
+ 
+.case-studies,
+.post-type-archive-case_study,
+.tax-case_study_cat {
+ 
+    .case-study {
+        
+        outline: none;
+		
+		> div {
+			position: relative;	
+		}
+
+		img {
+			width: 100%;
+		}
+        
+        
+        .item {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            overflow: hidden;
+            z-index: 1;
+            
+             &:hover div {
+                opacity: 1;
+                visibility: visible;
+                transition: ease all 0.3s;
+                z-index: 2;
+            }
+            
+            > div {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                z-index: -99;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(34,84,150,0.7);
+                
+                .more {
+                    width: 38px;
+                    height: 38px;
+                    position: absolute;
+                    right: 10px;
+                    top: 13px;
+                    z-index: 3;
+                    
+                    &:hover {
+                        opacity: .8;	
+                    }
+                }
+                
+                > div {
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    padding: 20px 50px;
+                    text-align: center;
+                    
+                    > * {
+                        color: white;	
+                    }
+                
+                    h2 {
+                        margin: 0 auto 5px;
+                    }
+                    
+                    ul {
+                        @include list-reset;
+                        
+                        li {
+                            a {
+                                color: #fff;
+                                font-size: 20px;
+                                font-weight: 300;      
+                            }
+                        }
+                    }
+                }
+             }
+             
+         }
+		
+	}
+
+}
+
+.post-type-archive-case_study,
+.tax-case_study_cat {
+ 
+    .hero .flex {
+        @media #{$large-up} {
+            min-height: 520px;   
+        }
+    }
+    
+    .site-main {
+        padding: 45px 0;   
+        
+        @media #{$large-up} {
+            padding: 90px 0;  
+        }
+    }
+    
+    // ie 10 fallback
+    .masonry-layout {
+        
+        @media #{$medium-up} {
+            column-count: 2;
+            column-gap: 12px;
+        }
+        
+        @media #{$large-up} {
+            column-count: 3;
+         }
+        
+    }
+    .masonry-layout__panel {
+      break-inside: avoid;
+      margin-bottom: 12px;
+    }
+    
+}
+
+
+
+.nav-terms {
+   background: #eff3f2; 
+}
+
+.nav-terms ul {
+    @include list-reset;
+    margin: 0 0 0 -12px;
+    text-align: center;
+    
+    li {
+        display: inline-block;
+        margin: 0 0 0 12px;   
+    }
+    
+    a {
+        display: block;
+        padding: 12px 5px;
+        text-align: center;
+        color: #4A4A4A;
+        
+        @media #{$medium-up} {
+            font-size: 20px;
+            line-height: 29px;
+            border-bottom: solid 2px transparent;
+            transition: ease all 0.3s;
+             
+            &:hover {
+                border-bottom: solid 2px $red;
+            }
+        }
+        
+     } 
+     
+     .current-cat a {
+         border-bottom: solid 2px $red;
+     }
+}
+
+
+
+.single-case_study {
+ 
+    .hero {
+        ul li {
+            
+            padding: 5px;
+            
+            a {
+                color: #D7D5D5;
+                font-size: 24px;
+                line-height: 32px;
+                font-weight: 300;
+                letter-spacing: .4px;
+            }
+        }
+    }
+    
+
+    .challenge {
+        .wrap {
+            max-width: 630px;
+            margin: 0 auto;
+            padding: 60px 0 40px;
+        }
+        
+        .entry-content {
+            text-align: center;   
+        }
+    }
+    
+    
+    
+    .solution {
+        background-color: #ececec;
+        position: relative;
+        padding-bottom: 40px;
+        
+        @media #{$large-up} {
+            padding-top: 30px;
+            padding-bottom: 80px;
+         }
+    
+        &:before {
+            content: '';
+            background: #fff;
+            width: 100%;
+            height: 160px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    
+        .wrap {
+            position: relative;
+            z-index: 3;
+        }
+    
+        @include breakpoint(large) {
+    
+            .wrap {
+                position: relative;
+            }
+    
+            img {
+                float: right;
+            }
+        }
+    
+        .white-box {
+            background: #fff;
+            width: 100%;
+            padding: 40px 20px;
+            
+            @include breakpoint(large) {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                border-top: solid 2px #f0f3f2;
+                border-right: solid 2px #f0f3f2;
+                border-bottom: solid 2px #f0f3f2;
+                width: 75%;
+                padding: 40px;
+            }
+    
+            @include breakpoint(xxlarge) {
+                width: 730px;
+            }
+            
+            .entry-content {
+               
+                
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-bottom: 15px;
+                    color: #454C54;
+                }
+        
+                ul {
+                    @include list-reset;
+                    padding-top: 15px;
+                    max-width: 530px;
+         
+                    li {
+                        background-image: url('assets/images/bullet.svg');
+                        background-repeat: no-repeat;
+                        background-position: left 3px;
+                        min-height: 28px;
+                        padding: 0 0 18px 40px!important;
+                        font-size: 20px;
+                        line-height: inherit;
+                        margin-bottom: 5px;
+
+                        a {
+                            text-decoration: none;   
+                        }
+                    }
+        
+                }
+                
+                @include breakpoint(medium down) {
+                    text-align: center;
+                    
+                    ul {
+                        display: inline-block;   
+                        
+                        li {
+                            text-align: left;   
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+    
+    
+    
+    .result {
+        .wrap {
+            max-width: 630px;
+            margin: 0 auto;
+            padding: 90px 0 60px;
+        }
+        
+        .entry-content {
+            text-align: center;   
+        }
+    }
+    
+    
+    .nav-links {
+        @media #{$large-up} {
+            position: relative;
+            z-index: 2;
+            top: -100px;
+            margin-bottom: -65px;
+        }
+    }
+    
+}
+
+
+
+.button.terms {
+	background: $navy;
+	color: #fff;
+	outline: none;
+	padding: 5px 10px 5px 10px;
+	position: relative;
+	width: 100%;
+    
+    svg {
+        width: 30px;
+        height: 30px;   
+    }
+    
+    /*
+ 	&:after {
+		content: '';
+		display: inline-block;
+		background-image: url(assets/images/arrow-white.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+		width: 10px;
+		height: 30px;
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform: translate(-50%,-50%);
+	}
+	
+	&.hover:after {
+		transform: translate(-50%,-50%) rotate(90deg);
+		right: 15px;
+	}
+    */
+	
+}
+
+.dropdown-pane.terms {
+	display: none;
+	background: #eff3f2;
+  	padding: 0;
+    width: 100%;
+    
+    &.expanded {
+        display: block;   
+    }
+ 	 	
+	ul {
+		@include list-reset;	
+	}
+    
+    li {
+        display: block; 
+        margin: 0;  
+    }
+	
+	a {
+		border: none!important;
+	}
+}
