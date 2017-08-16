@@ -138,14 +138,6 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-parts/modal-contact.php:18
-msgid "Free Consultation"
-msgstr ""
-
-#: template-parts/modal-contact.php:23
-msgid "We’ll get back to you within 1 business day."
-msgstr ""
-
 #: template-parts/section-case-studies.php:80
 msgid "Case Studies"
 msgstr ""
@@ -160,10 +152,6 @@ msgstr ""
 
 #: template-parts/section-testimonials.php:58
 msgid "Read what clients are saying..."
-msgstr ""
-
-#: lib/functions/scripts.php:27
-msgid "logo"
 msgstr ""
 
 #: lib/functions/template-tags.php:26
