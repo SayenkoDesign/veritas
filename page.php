@@ -33,7 +33,7 @@ get_template_part( 'template-parts/section', 'hero' );
 		
 		_s_section_open( $attr );		
 		
-		print( '<div class="column row">' );
+		print( '<div class="column row"><div class="entry-content">' );
 		
 		while ( have_posts() ) :
 
@@ -43,7 +43,7 @@ get_template_part( 'template-parts/section', 'hero' );
 				
 		endwhile;
 		
-		print( '</div>' );
+		print( '</div></div>' );
 		_s_section_close();	
 	}
 	?>

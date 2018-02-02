@@ -17,17 +17,21 @@ add_filter( 'template_include', '_s_case_study_template_redirect' );
 function _case_study_item( $index = 0 ) {
     global $post;
     $more = sprintf( '<a href="%s" class="more">%s</a>', get_permalink(), get_svg( 'plus' ) );
-    $thumbnail = get_the_post_thumbnail( get_the_ID(), 'case-study-thumbnail' );
+    $thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'case-study-thumbnail' );
+    $background = '';
+    if( !empty( $thumbnail ) ) {
+        $background = sprintf( 'style="background-image: url(%s);"', $thumbnail );
+    }
     $title = the_title( '<h4>', '</h4>', false );
     
-    $cats = _s_case_study_terms(); // do we want to remove this on the archives?
+    $cats = _s_get_post_terms( get_the_ID() ); // do we want to remove this on the archives?
     
     // add single class to every third item
     $count = $index + 1;
     $class = ( $count % 3 == 0 ) ? ' single' : '' ;
     
-    return sprintf( '<div class="item%s">%s<div>%s<div>%s%s</div></div></div>', 
-                           $class, $thumbnail, $more, the_title( '<h2>', '</h2>', false ), $cats );
+    return sprintf( '<div class="item%s" %s><div class="hover">%s<div>%s%s</div></div></div>', 
+                           $class, $background, $more, the_title( '<h2>', '</h2>', false ), $cats );
     
    
 }
@@ -57,6 +61,23 @@ function _s_case_study_terms() {
      
 	return sprintf('<ul>%s</ul>', wp_list_categories( $args ) );
 	
+}
+
+
+function _s_get_post_terms( $post_id ) {
+    $taxonomy = 'case_study_cat';
+    $terms = wp_get_post_terms( $post_id, $taxonomy );
+    if( !is_wp_error( $terms ) && !empty( $terms ) ) {
+        $out = '';
+        foreach( $terms as $term ) {
+            $term_class = sanitize_title( $term->name );
+        $out .= sprintf( '<li><a href="%s" class="term-link %s">%s<span>%s</span></a></li>', get_term_link( $term->slug, $taxonomy ), $term_class, get_svg( $term_class ), $term->name );
+        }
+        
+        return sprintf( '<ul class="post-categories">%s</ul>', $out );
+        
+    }
+    
 }
 
 

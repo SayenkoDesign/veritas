@@ -197,7 +197,7 @@ h3,
 	ul:not([class]),
 	ol:not([class]) {
 		
-		margin: 0 0 30px;
+		margin: 0 0 30px 18px;
 		list-style-position: outside;
 		
 		li:not([class]) {
@@ -213,10 +213,9 @@ h3,
  	
 }
 
-.page .entry-content {
+body:not(.page-template-default) .entry-content {
  
-    ul:not([class]),
-	ol:not([class]) {
+    ul:not([class]) {
 		
         @include fancy-list;
        

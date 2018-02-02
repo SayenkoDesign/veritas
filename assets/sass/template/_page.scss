@@ -122,6 +122,14 @@ input[type="submit"] {
 .error404 {
 
 	.site-main .section {
+        
+        padding: 30px 0;
+            
+        @media #{$large-up} {
+            padding: 75px 0;
+           
+        }
+    
 
 		.entry-content {
             

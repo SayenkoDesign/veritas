@@ -43,7 +43,6 @@
 
 	.testimonial {
 		color: white;
-		text-align: center;
 		position: relative;
 		padding: 0 25px;
 		
@@ -81,12 +80,12 @@
 	@media #{$large-up} {
       	
 		.quote-content p {
-			font-size: 30px;
+			font-size: 24px;
 			line-height: 35px;
 		}
 		
 		.quote-name {
- 			font-size: 24px;
+ 			font-size: 20px;
 		}
 		
 	}
@@ -100,40 +99,54 @@
 		cursor: pointer;
 		width: 65px;
 		height: 65px;
- 		background-size: contain;
-		background-repeat: no-repeat;
+        
+        
+        span {
+            border: 3px solid #ececec;
+            border-radius: 50%;
+            display: block;
+            position: relative;   
+            width: 65px;
+		    height: 65px;
+            
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);  
+                width: 31px;
+                height: 22px; 
+            }
+        }
 		
 		opacity: .8;
 		
-		&:hover svg {
-			opacity: 1;	
+		&:hover {
+            
+            opacity: 1;	
+            
+            svg {
+			    opacity: 1;	
+            }
 		}
-        
-        svg .circle,
-        svg .arrow {
-            fill: #fff!important;    
-        }
-        
-        svg .line {
-            stroke: #fff!important;    
-        }
 		
-		
+		// Show arrows on larger screens
 		@media #{$large-up} {
       		display: block!important;
 		}
 		
-		span {
-			@extend .screen-reader-text;
-		}
-		
+	
  		&.arrow-left {
-			left: 0;
-			transform: translateY(-50%) rotate(-180deg);
-			
+            transform: translateY(-50%);
+            
+            left: 0;			
 			@media #{$xxxlarge-up} {
       			left: -75px;
 			}
+            
+            svg {
+                transform: translate(-50%,-50%) rotate(-180deg);   
+            }
  		}
 		
 		&.arrow-right {
@@ -143,10 +156,7 @@
       			right: -75px;
 			}
  		}
- 		
-		&:hover {
-			opacity: 1;	
-		}
+
 	}
 
 	.slick-dots {

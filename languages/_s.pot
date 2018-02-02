@@ -1,4 +1,4 @@
-# Copyright (C) 2017 _s
+# Copyright (C) 2018 _s
 # This file is distributed under the same license as the _s package.
 msgid ""
 msgstr ""
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: archive-case_study.php:128, page-templates/services.php:51
+#: archive-case_study.php:130, page-templates/services.php:51
 msgid "Menu"
 msgstr ""
 

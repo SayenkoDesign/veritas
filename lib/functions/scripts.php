@@ -7,25 +7,26 @@ function _s_register_scripts() {
 	// Foundation
 	wp_register_script( 'foundation', trailingslashit( THEME_JS ) . 'foundation.min.js', array('jquery'), '', true );
     
-    wp_register_script( 'macy', 
-					   trailingslashit( THEME_ASSETS ) . 'bower_components/macy/dist/macy.js' );
+    //wp_register_script( 'macy', 
+					   //trailingslashit( THEME_ASSETS ) . 'bower_components/macy/dist/macy.js' );
 	
 	// Frontpage
 	wp_register_script( 'front-page', trailingslashit( THEME_JS ) . 'front-page.min.js', array('jquery'), '', true );
+    
 
 	// Project
  	wp_register_script( 'project' , trailingslashit( THEME_JS ) . 'project.js',
 			array(
 					'jquery',
  					'foundation',
-                    'macy'
+                    'masonry'
 					),
 				NULL, TRUE );
                 
     $language_code = 'en' != ICL_LANGUAGE_CODE ? sprintf( '-%s', ICL_LANGUAGE_CODE ) : '' ;
 	
 	wp_localize_script( 'project', 'theme_vars', array( 
-						'arrow_circle' => get_svg( 'arrow-circle' ),
+						'arrow_circle' => get_svg( 'arrow' ),
 						'logo' 		   => get_svg( sprintf( 'logo%s', $language_code ) )
 					
 					 ) );

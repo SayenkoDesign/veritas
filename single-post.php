@@ -76,10 +76,10 @@ function section_hero() {
                     endwhile;
                     
                     $previous = sprintf( '%s<span class="%s"></span>', 
-                                         get_svg( 'arrow-circle' ), __( 'Previous Post', '_s') );
+                                         get_svg( 'arrow' ), __( 'Previous Post', '_s') );
                     
                     $next = sprintf( '%s<span class="%s"></span>', 
-                                         get_svg( 'arrow-circle' ), __( 'Next Post', '_s') );
+                                         get_svg( 'arrow' ), __( 'Next Post', '_s') );
                     
                     the_post_navigation( array( 'prev_text' => $previous, 'next_text' => $next ) );
                     

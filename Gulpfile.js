@@ -9,13 +9,11 @@ const proxy_url = 'https://veritas.vanwp.ca';
 const autoprefixer = require( 'autoprefixer' );
 const babel = require( 'gulp-babel' );
 const browserSync = require( 'browser-sync' );
-const cheerio = require( 'gulp-cheerio' );
 const concat = require( 'gulp-concat' );
 const cssnano = require( 'gulp-cssnano' );
 const del = require( 'del' );
 const eslint = require( 'gulp-eslint' );
 const gulp = require( 'gulp' );
-const gutil = require( 'gulp-util' );
 const imagemin = require( 'gulp-imagemin' );
 const mqpacker = require( 'css-mqpacker' );
 const notify = require( 'gulp-notify' );
@@ -25,6 +23,7 @@ const cssimport = require( 'gulp-cssimport' );
 const reload = browserSync.reload;
 const rename = require( 'gulp-rename' );
 const sass = require( 'gulp-sass' );
+const sassdoc = require( 'sassdoc' );
 const sassLint = require( 'gulp-sass-lint' );
 const sort = require( 'gulp-sort' );
 const sourcemaps = require( 'gulp-sourcemaps' );
@@ -54,8 +53,6 @@ function handleErrors () {
 		'sound': 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
 	} ).apply( this, args );
 
-	gutil.beep(); // Beep 'sosumi' again.
-
 	// Prevent the 'watch' task from stopping.
 	this.emit( 'end' );
 }
@@ -84,8 +81,10 @@ gulp.task( 'scss', [ 'clean:styles' ],  () => {
     // Compile Sass using LibSass.
     .pipe( sass( {
         'errLogToConsole': true,
+        'includePaths': ['node_modules/motion-ui/src'],
         'outputStyle': 'expanded' // Options: nested, expanded, compact, compressed
     } ) )
+
 
     // Parse with PostCSS plugins.
     .pipe( postcss( [
@@ -193,7 +192,7 @@ gulp.task('foundation-js', () => {
 		*/
 	])
 	.pipe(babel({
-		presets: ['es2015'],
+		presets: ['env'],
 		compact: false
 	}))
 	.pipe(concat('foundation.js'))
@@ -222,7 +221,7 @@ gulp.task( 'concat', () => {
 
 		// Convert ES6+ to ES2015.
 		.pipe( babel( {
-			presets: [ 'es2015' ]
+			presets: [ 'env' ]
 		} ) )
 
 		// Concatenate partials into a single script.

@@ -146,10 +146,11 @@
         slidesToShow: 1,
 		dots: true,
 		arrows: true,
-		nextArrow: '<div class="arrow-right">' + theme_vars.arrow_circle +  '<span>Next</span></div>',
-  		prevArrow: '<div class="arrow-left">' + theme_vars.arrow_circle +  '<span>Previous</span></div>',
+		nextArrow: '<div class="arrow-right"><span>' + theme_vars.arrow_circle +  '</span></div>',
+  		prevArrow: '<div class="arrow-left"><span>' + theme_vars.arrow_circle +  '</span></div>',
 	});
     
+    /*
     // only call masonry if ie10> && parent container exists
     if (Modernizr.dataset && $('.masonry-layout').length ) {
     
@@ -166,6 +167,18 @@
         });
     
     }
+    */
+    
+    
+    $('.masonry-layout').masonry({
+      // set itemSelector so .grid-sizer is not used in layout
+      itemSelector: '.masonry-layout__panel',
+      // use element for option
+      columnWidth: '.masonry-layout__panel-sizer',
+      percentPosition: true,
+      //gutter: 12
+    });
+    
     
     // Theme specific - disable parent menu items, and click on mobile
     $('.site-header:not(fixed) .nav-primary .menu-item-has-children > a').on("click", function(event){

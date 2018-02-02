@@ -19,9 +19,11 @@ get_header(); ?>
 section_hero();
 function section_hero() {
     
+    $out = '';
+    
     $args = array(
         'post_type'      => 'page',
-        'p'				 => CASE_STUDY_PAGE_ID,
+        'p'				 => apply_filters( 'wpml_object_id', CASE_STUDY_PAGE_ID, 'page' ),
         'posts_per_page' => 1,
         'post_status'    => 'publish'
     );
@@ -153,8 +155,7 @@ function terms_menu() {
                 while ( have_posts() ) :
     
                     the_post();
-                    
-                    
+                     
                     printf( '<article id="post-%s" class="%s">', get_the_ID(), join( ' ', get_post_class( 'masonry-layout__panel case-study' ) ) );
     
                     echo _case_study_item();
@@ -163,6 +164,7 @@ function terms_menu() {
     
                 endwhile;
                 
+                echo '<div class="masonry-layout__panel-sizer"></div>';
                 ?>
                 </div>
                 <?php

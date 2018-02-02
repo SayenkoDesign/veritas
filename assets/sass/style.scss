@@ -25,7 +25,9 @@ _s is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc
 @import "base/index";
 
 // Motion UI
-@import "assets/bower_components/motion-ui/motion-ui";
+@import "motion-ui";
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // Components
 @import "components/index";
