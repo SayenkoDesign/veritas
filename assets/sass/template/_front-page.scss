@@ -132,7 +132,6 @@
 	padding-bottom: 40px;
 	
 	@media #{$large-up} {
-        margin-top: 60px;
 		padding-top: 30px;
       	padding-bottom: 80px;
 	}
@@ -159,7 +158,10 @@
 		}
 
 		img {
-			float: right;
+			display: block;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
 		}
 	}
 
@@ -169,20 +171,16 @@
 		padding: 40px 20px;
 		
 		@include breakpoint(large) {
-			position: absolute;
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%);
+			
 			border-top: solid 2px #f0f3f2;
 			border-right: solid 2px #f0f3f2;
 			border-bottom: solid 2px #f0f3f2;
 			width: auto;
-			padding: 40px;
+			padding: 140px;
+            margin-top: -100px;
 		}
 
-		@include breakpoint(xxlarge) {
-			width: 730px;
-		}
+		
         
         .entry-content {
             p {
